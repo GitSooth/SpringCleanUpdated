@@ -13,8 +13,6 @@ public class FreeMovement : MonoBehaviour
 
     void Update()
     { 
-        Vector3 characterScale = transform.localScale;
-
         if (Input.GetKey(KeyCode.D))
         {
             player.position += new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0.0f, 0.0f);

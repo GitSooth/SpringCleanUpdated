@@ -10,8 +10,6 @@ public class GrabTrash : MonoBehaviour
     public GameObject trashObject;
     public float range = 0.5f;
 
-	public Score score;
-
     public bool grabbed;
 
     public LayerMask trashLayers;

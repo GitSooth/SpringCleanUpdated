@@ -4,43 +4,17 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public bool inPosition = false;
-    public GameObject tree;
-    Transform plantposiction;
-    public List<GameObject> Treelist;
-    int TreeCount = 0;
+    public Sprite tree;
+    public bool inPosition;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.tag == "Plant")
-        {
-            Debug.Log($"{collision.tag}");
-            Debug.Log("inside");
-            inPosition = true;
-            plantposiction = collision.transform;
-        }
+        Debug.Log(collider.tag);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I) && inPosition == true)
-        {
-
-            GameObject treeObject = Instantiate(tree);
-            treeObject.transform.parent = plantposiction;
-            treeObject.SetActive(true);
-            treeObject.transform.localPosition = new Vector3(0, 0, 0);
-            Debug.Log("Planted tree");
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Plant")
-        {
-            Debug.Log("left");
-            inPosition = false;
-        }
-
-    }
+    //void OnTriggerExit2D(Collider2D collider)
+    //{
+    //    if (collider.tag == "Player")
+    //        inPosition = false;
+    //}
 }

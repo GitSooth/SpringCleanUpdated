@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlantCommand : MonoBehaviour
 {
-
 	public GameObject Plant;
-	public Score score;
 
 	public bool plant;
 

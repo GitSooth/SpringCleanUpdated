@@ -15,5 +15,6 @@ public class FollowCharHealth : MonoBehaviour
     void Update()
     {
         this.transform.SetParent(character);
+        this.transform.rotation = rot;
     }
 }

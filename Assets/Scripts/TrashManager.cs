@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class TrashManager : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class TrashManager : MonoBehaviour
     public GameObject[] trash1, trash2, trash3, trash4, trash5, trash6;
     public LayerMask trashLayer;
 
+    public Text text;
+
     [SerializeField]
     private List<TileData> tileDatas;
+
+    public Sprite tree;
 
     public Tile topLeft, botLeft, midTop, midBot, rightTop, rightBot;
 
     private Dictionary<TileBase, TileData> dataFromTiles;
+
+    int points = 0;
+
+    public bool inPosition;
 
     private void Awake()
     {
@@ -33,6 +42,8 @@ public class TrashManager : MonoBehaviour
 
     void Start()
     {
+        text.text = "Score: 0";
+
         trashList1 = new List<GameObject>();
         trashList2 = new List<GameObject>();
         trashList3 = new List<GameObject>();
@@ -76,37 +87,61 @@ public class TrashManager : MonoBehaviour
         foreach(GameObject go in trashList1)
         {
             if (go == null)
+            {
                 trashList1.Remove(go);
+                points += 15;
+                text.text = "Score: " + points;
+            }
         }
 
         foreach (GameObject go in trashList2)
         {
             if (go == null)
+            {
                 trashList2.Remove(go);
-        }
+                points += 15;
+                text.text = "Score: " + points;
+            }
+            }
 
         foreach (GameObject go in trashList3)
         {
             if (go == null)
+            {
                 trashList3.Remove(go);
+                points += 15;
+                text.text = "Score: " + points;
+            }
         }
 
         foreach (GameObject go in trashList4)
         {
             if (go == null)
+            {
                 trashList4.Remove(go);
-        }
+                points += 15;
+                text.text = "Score: " + points;
+            }
+            }
 
         foreach (GameObject go in trashList5)
         {
             if (go == null)
+            {
                 trashList5.Remove(go);
-        }
+                points += 15;
+                text.text = "Score: " + points;
+            }
+            }
 
         foreach (GameObject go in trashList6)
         {
             if (go == null)
+            {
                 trashList6.Remove(go);
+                points += 15;
+                text.text = "Score: " + points;
+            }
         }
 
         if (trashList1.Count == 0)
@@ -149,17 +184,6 @@ public class TrashManager : MonoBehaviour
             Vector3Int gridPosition = new Vector3Int(-1, -4, 0);
 
             map.SetTile(gridPosition, rightBot);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.tag == "LogMarker")
-        {
-            if(Input.GetKey(KeyCode.M))
-            {
-                collision.GetComponent<Sprite>()
-            }
         }
     }
 }
