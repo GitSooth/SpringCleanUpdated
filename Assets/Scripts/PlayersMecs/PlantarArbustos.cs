@@ -24,7 +24,7 @@ public class PlantarArbustos : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && inPosition == true)
+        if (Input.GetKeyDown(KeyCode.U) && inPosition == true)
         {
 
             GameObject treeObject = Instantiate(arbustos);
