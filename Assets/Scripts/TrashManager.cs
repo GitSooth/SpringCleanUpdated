@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class TrashManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class TrashManager : MonoBehaviour
     public GameObject[] trash1, trash2, trash3, trash4, trash5, trash6;
     public LayerMask trashLayer;
 
+    public Text text;
+
     [SerializeField]
     private List<TileData> tileDatas;
 
@@ -18,11 +21,23 @@ public class TrashManager : MonoBehaviour
 
     private Dictionary<TileBase, TileData> dataFromTiles;
 
-	public Score score;
+    private bool trash1Done = false,
+        trash2Done = false,
+        trash3Done = false,
+        trash4Done = false,
+        trash5Done = false,
+        trash6Done = false;
 
-	private bool trash1Done, trash2Done, trash3Done, trash4Done, trash5Done, trash6Done;
+    private bool points1added = false,
+        points2added = false,
+        points3added = false,
+        points4added = false,
+        points5added = false,
+        points6added = false;
 
-	private void Awake()
+    public int pontos = 0;
+
+    private void Awake()
     {
         dataFromTiles = new Dictionary<TileBase, TileData>();
 
@@ -47,176 +62,231 @@ public class TrashManager : MonoBehaviour
         foreach (GameObject trashLeft in trash1)
         {
             trashList1.Add(trashLeft);
-			
+
         }
 
         foreach (GameObject trashLeft in trash2)
         {
             trashList2.Add(trashLeft);
-			
-		}
+
+        }
 
         foreach (GameObject trashLeft in trash3)
         {
             trashList3.Add(trashLeft);
-			
-		}
+
+        }
 
         foreach (GameObject trashLeft in trash4)
         {
             trashList4.Add(trashLeft);
-			
-		}
+
+        }
 
         foreach (GameObject trashLeft in trash5)
         {
             trashList5.Add(trashLeft);
-		
-		}
+
+        }
 
         foreach (GameObject trashLeft in trash6)
         {
             trashList6.Add(trashLeft);
-		
-		}
+
+        }
     }
 
     void Update()
     {
-        foreach(GameObject go in trashList1)
+        foreach (GameObject go in trashList1)
         {
-            if (go == null) {
-
-				trashList1.Remove(go);
-			score.setscore(150);
-
-			}
-            
-		}
+            if (go == null)
+            {
+                trashList1.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
 
         foreach (GameObject go in trashList2)
         {
             if (go == null)
-			{
-
-				trashList2.Remove(go);
-				score.setscore(150);
-
-			}
-		}
+            {
+                trashList2.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
 
         foreach (GameObject go in trashList3)
         {
             if (go == null)
-			{
-
-				trashList3.Remove(go);
-				score.setscore(150);
-
-			}
-		}
+            {
+                trashList3.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
 
         foreach (GameObject go in trashList4)
         {
             if (go == null)
-			{
-
-				trashList4.Remove(go);
-				score.setscore(150);
-
-			}
-		}
+            {
+                trashList4.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
 
         foreach (GameObject go in trashList5)
         {
             if (go == null)
-			{
-
-				trashList5.Remove(go);
-				score.setscore(150);
-
-			}
-		}
+            {
+                trashList5.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
 
         foreach (GameObject go in trashList6)
         {
             if (go == null)
-			{
-
-				trashList6.Remove(go);
-				score.setscore(150);
-
-			}
-		}
+            {
+                trashList6.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
 
         if (trashList1.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(-5, -2, 0);
 
-			map.SetTile(gridPosition, topLeft);
-			score.setscore(300);
+            map.SetTile(gridPosition, topLeft);
 
-			trash1Done =true;
+            if (!points1added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                points1added = true;
+            }
+            else
+            {
+
+            }
+
+            trash1Done = true;
         }
 
         if (trashList2.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(-5, -4, 0);
 
-			map.SetTile(gridPosition, botLeft);
-			score.setscore(300);
+            map.SetTile(gridPosition, botLeft);
 
-			trash2Done = true;
-		}
+            if (!points2added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                points2added = true;
+            }
+            else
+            {
+
+            }
+
+            trash2Done = true;
+        }
 
         if (trashList3.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(-3, -2, 0);
 
-	        map.SetTile(gridPosition, midTop);
-	        score.setscore(300);
+            map.SetTile(gridPosition, midTop);
 
-			trash3Done = true;
-		}
+            if (!points3added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                points3added = true;
+            }
+            else
+            {
+
+            }
+
+            trash3Done = true;
+        }
 
         if (trashList4.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(-3, -4, 0);
 
-			map.SetTile(gridPosition, midBot);
-			score.setscore(300);
+            map.SetTile(gridPosition, midBot);
 
-			trash4Done = true;
-		}
+            if (!points4added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                points4added = true;
+            }
+            else
+            {
+
+            }
+
+            trash4Done = true;
+        }
 
         if (trashList5.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(-1, -2, 0);
 
-			map.SetTile(gridPosition, rightTop);
-			score.setscore(300);
+            map.SetTile(gridPosition, rightTop);
 
-			trash1Done = true;
-		}
+            if (!points5added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                points5added = true;
+            }
+            else
+            {
+
+            }
+
+
+            trash5Done = true;
+        }
 
         if (trashList6.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(-1, -4, 0);
 
-		     map.SetTile(gridPosition, rightBot);
-             score.setscore(300);
+            map.SetTile(gridPosition, rightBot);
 
-			trash1Done = true;
-		}
+            if (!points6added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                points6added = true;
+            }
+            else
+            {
+
+            }
+
+            trash6Done = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "LogMarker")
+        if (collision.tag == "LogMarker")
         {
-            if(Input.GetKey(KeyCode.M))
+            if (Input.GetKey(KeyCode.M))
             {
-				collision.GetComponent<Sprite>();
+                collision.GetComponent<Sprite>();
             }
         }
     }
