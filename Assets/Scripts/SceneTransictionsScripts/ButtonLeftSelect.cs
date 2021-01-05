@@ -18,7 +18,6 @@ public class ButtonLeftSelect : MonoBehaviour
 			selection = (selection - 1) % charactercube.Length;
 		}
 	
-
 		charactercube[selection].SetActive(true);
 	}
 

@@ -43,7 +43,7 @@ public class MovementManagerAI : MonoBehaviour
         info.rotation *= angularDrag;
 
         // Get the movement steering data, and update our velocities
-        Streering steering = steeringBehaviour.GetStreering(info, target);
+        Steering steering = steeringBehaviour.GetSteering(info, target);
         info.velocity += steering.linear;
         info.rotation += steering.angular;
 

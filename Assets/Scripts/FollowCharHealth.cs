@@ -5,16 +5,11 @@ using UnityEngine;
 public class FollowCharHealth : MonoBehaviour
 {
     public Transform character;
-    Quaternion rot;
-
-    private void Start()
-    {
-        rot = this.gameObject.transform.rotation;
-    }
+    public Transform bar;
 
     void Update()
     {
         this.transform.SetParent(character);
-        this.transform.rotation = rot;
+        this.transform.eulerAngles = new Vector3(0, 180, 0);
     }
 }

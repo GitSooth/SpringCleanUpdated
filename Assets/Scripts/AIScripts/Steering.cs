@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Streering
+public class Steering
 {
 	public Vector3 linear;
 
