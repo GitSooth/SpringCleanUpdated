@@ -11,7 +11,7 @@ public class DTAccao : MonoBehaviour
 	{
 		private Action action;
 
-		public DTDTAccao()
+		public DTAction(Action action)
 		{
 			this.action = action;
 		}

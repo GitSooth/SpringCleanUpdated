@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class TeleportWrap : MonoBehaviour
 {
-	public GameObject Player;
-	public GameObject Teleport;
+    public GameObject Player;
+    public GameObject Teleport;
 
-	public void OnTriggerEnter2D(Collider other)
-	{
-		if(other.gameObject.tag=="Player")
-		{
-			StartCoroutine(Wrap());
-		}
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine("Warp");
+        }
 
-		IEnumerable Wrap()
-		{
-			yield return new WaitForSeconds(1);
-			Player.transform.position = new Vector2(Teleport.transform.position.x, Teleport.transform.position.y);
-		}
-	}
+        IEnumerable Warp()
+        {
+            yield return new WaitForSeconds(1);
+            Player.transform.position = new Vector2(Teleport.transform.position.x, Teleport.transform.position.y);
+        }
+    }
 }

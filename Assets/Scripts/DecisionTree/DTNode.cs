@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DTNode : MonoBehaviour
+public abstract class DTNode
 {
-	public abstract class DTNode
-	{
-		public abstract void Run();
-	}
+    public abstract void Run();
 }
