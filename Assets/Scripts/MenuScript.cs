@@ -15,6 +15,11 @@ public class MenuScript : MonoBehaviour
 
     }
 
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("Level Select");
+    }
+
     public void Quit()
     {
         Application.Quit();

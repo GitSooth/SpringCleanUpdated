@@ -25,6 +25,7 @@ public class GrabTrash : MonoBehaviour
         {
             Collider2D trash = Physics2D.OverlapCircle(attackPoint.position, range, trashLayers);
             trash.transform.parent = attackPoint;
+            trash.transform.position = attackPoint.position;
             grabbed = true;
         }
 

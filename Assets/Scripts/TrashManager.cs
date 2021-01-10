@@ -14,6 +14,8 @@ public class TrashManager : MonoBehaviour
 
     public Text text;
 
+    public Vector3Int cLT, cLB, cMT, cMB, cRT, cRB;
+
     [SerializeField]
     private List<TileData> tileDatas;
 
@@ -160,7 +162,7 @@ public class TrashManager : MonoBehaviour
 
         if (trashList1.Count == 0)
         {
-            Vector3Int gridPosition = new Vector3Int(-5, -2, 0);
+            Vector3Int gridPosition = new Vector3Int(cLT.x, cLT.y, cLT.z);
 
             map.SetTile(gridPosition, topLeft);
 
@@ -180,7 +182,7 @@ public class TrashManager : MonoBehaviour
 
         if (trashList2.Count == 0)
         {
-            Vector3Int gridPosition = new Vector3Int(-5, -4, 0);
+            Vector3Int gridPosition = new Vector3Int(cLB.x, cLB.y, cLB.z);
 
             map.SetTile(gridPosition, botLeft);
 
@@ -200,7 +202,7 @@ public class TrashManager : MonoBehaviour
 
         if (trashList3.Count == 0)
         {
-            Vector3Int gridPosition = new Vector3Int(-3, -2, 0);
+            Vector3Int gridPosition = new Vector3Int(cMT.x, cMT.y, cMT.z);
 
             map.SetTile(gridPosition, midTop);
 
@@ -220,7 +222,7 @@ public class TrashManager : MonoBehaviour
 
         if (trashList4.Count == 0)
         {
-            Vector3Int gridPosition = new Vector3Int(-3, -4, 0);
+            Vector3Int gridPosition = new Vector3Int(cMB.x, cMB.y, cMB.z);
 
             map.SetTile(gridPosition, midBot);
 
@@ -240,7 +242,7 @@ public class TrashManager : MonoBehaviour
 
         if (trashList5.Count == 0)
         {
-            Vector3Int gridPosition = new Vector3Int(-1, -2, 0);
+            Vector3Int gridPosition = new Vector3Int(cRT.x, cRT.y, cRT.z);
 
             map.SetTile(gridPosition, rightTop);
 
@@ -261,7 +263,7 @@ public class TrashManager : MonoBehaviour
 
         if (trashList6.Count == 0)
         {
-            Vector3Int gridPosition = new Vector3Int(-1, -4, 0);
+            Vector3Int gridPosition = new Vector3Int(cRB.x, cRB.y, cRB.z);
 
             map.SetTile(gridPosition, rightBot);
 
@@ -277,17 +279,6 @@ public class TrashManager : MonoBehaviour
             }
 
             trash6Done = true;
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "LogMarker")
-        {
-            if (Input.GetKey(KeyCode.M))
-            {
-                collision.GetComponent<Sprite>();
-            }
         }
     }
 }

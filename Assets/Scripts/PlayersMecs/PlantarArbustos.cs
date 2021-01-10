@@ -26,7 +26,6 @@ public class PlantarArbustos : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U) && inPosition == true)
         {
-
             GameObject treeObject = Instantiate(arbustos);
             treeObject.transform.parent = plantposiction;
             treeObject.SetActive(true);
