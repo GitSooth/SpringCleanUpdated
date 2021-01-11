@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
@@ -41,6 +42,7 @@ public class TrashManager : MonoBehaviour
         specialAdded = false;
 
     public int pontos = 0;
+    string Scene = "";
 
     private void Awake()
     {
@@ -89,13 +91,17 @@ public class TrashManager : MonoBehaviour
 
     void Update()
     {
-        foreach(GameObject go in specialList)
-        {
-            if (go == null)
+        Scene = SceneManager.GetActiveScene().name;
+
+        if (Scene == "4th Level") {
+            foreach (GameObject go in specialList)
             {
-                specialList.Remove(go);
-                pontos += 15;
-                text.text = ($"Score: {pontos}");
+                if (go == null)
+                {
+                    specialList.Remove(go);
+                    pontos += 15;
+                    text.text = ($"Score: {pontos}");
+                }
             }
         }
 
@@ -159,24 +165,28 @@ public class TrashManager : MonoBehaviour
             }
         }
 
-        if(specialList.Count == 0)
+        if (Scene == "4th Level")
         {
-            Vector3Int gridPosition = new Vector3Int(sC.x, sC.y, sC.z);
 
-            map.SetTile(gridPosition, specialTile);
-
-            if (!points1added)
+            if (specialList.Count == 0)
             {
-                pontos += 100;
-                text.text = ($"Score: {pontos}");
-                specialAdded = true;
-            }
-            else
-            {
+                Vector3Int gridPosition = new Vector3Int(sC.x, sC.y, sC.z);
 
-            }
+                map.SetTile(gridPosition, specialTile);
 
-            specialDone = true;
+                if (!points1added)
+                {
+                    pontos += 100;
+                    text.text = ($"Score: {pontos}");
+                    specialAdded = true;
+                }
+                else
+                {
+
+                }
+
+                specialDone = true;
+            }
         }
 
         if (trashList1.Count == 0)
