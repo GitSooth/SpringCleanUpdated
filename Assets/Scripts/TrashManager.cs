@@ -8,18 +8,19 @@ public class TrashManager : MonoBehaviour
 {
     [SerializeField]
     Tilemap map;
-    public List<GameObject> trashList1, trashList2, trashList3, trashList4, trashList5, trashList6;
-    public GameObject[] trash1, trash2, trash3, trash4, trash5, trash6;
+    public List<GameObject> trashList1, trashList2, trashList3, trashList4, trashList5, trashList6, specialList;
+    public GameObject[] trash1, trash2, trash3, trash4, trash5, trash6, specialArray;
     public LayerMask trashLayer;
 
     public Text text;
 
-    public Vector3Int cLT, cLB, cMT, cMB, cRT, cRB;
+    public Vector3Int cLT, cLB, cMT, cMB, cRT, cRB, sC;
 
     [SerializeField]
     private List<TileData> tileDatas;
 
     public Tile topLeft, botLeft, midTop, midBot, rightTop, rightBot;
+    public AnimatedTile specialTile;
 
     private Dictionary<TileBase, TileData> dataFromTiles;
 
@@ -28,14 +29,16 @@ public class TrashManager : MonoBehaviour
         trash3Done = false,
         trash4Done = false,
         trash5Done = false,
-        trash6Done = false;
+        trash6Done = false,
+    specialDone = false;
 
     private bool points1added = false,
         points2added = false,
         points3added = false,
         points4added = false,
         points5added = false,
-        points6added = false;
+        points6added = false,
+        specialAdded = false;
 
     public int pontos = 0;
 
@@ -60,46 +63,42 @@ public class TrashManager : MonoBehaviour
         trashList4 = new List<GameObject>();
         trashList5 = new List<GameObject>();
         trashList6 = new List<GameObject>();
+        specialList = new List<GameObject>();
 
         foreach (GameObject trashLeft in trash1)
-        {
             trashList1.Add(trashLeft);
 
-        }
-
         foreach (GameObject trashLeft in trash2)
-        {
             trashList2.Add(trashLeft);
 
-        }
-
         foreach (GameObject trashLeft in trash3)
-        {
             trashList3.Add(trashLeft);
 
-        }
-
         foreach (GameObject trashLeft in trash4)
-        {
             trashList4.Add(trashLeft);
 
-        }
-
         foreach (GameObject trashLeft in trash5)
-        {
             trashList5.Add(trashLeft);
 
-        }
-
         foreach (GameObject trashLeft in trash6)
-        {
             trashList6.Add(trashLeft);
 
-        }
+        foreach (GameObject trashLeft in specialArray)
+            specialList.Add(trashLeft);
     }
 
     void Update()
     {
+        foreach(GameObject go in specialList)
+        {
+            if (go == null)
+            {
+                specialList.Remove(go);
+                pontos += 15;
+                text.text = ($"Score: {pontos}");
+            }
+        }
+
         foreach (GameObject go in trashList1)
         {
             if (go == null)
@@ -158,6 +157,26 @@ public class TrashManager : MonoBehaviour
                 pontos += 15;
                 text.text = ($"Score: {pontos}");
             }
+        }
+
+        if(specialList.Count == 0)
+        {
+            Vector3Int gridPosition = new Vector3Int(sC.x, sC.y, sC.z);
+
+            map.SetTile(gridPosition, specialTile);
+
+            if (!points1added)
+            {
+                pontos += 100;
+                text.text = ($"Score: {pontos}");
+                specialAdded = true;
+            }
+            else
+            {
+
+            }
+
+            specialDone = true;
         }
 
         if (trashList1.Count == 0)
