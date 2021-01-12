@@ -1,22 +1,24 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public static class SaveSystem
 {
-    public static void SaveGame(GameObject player)
+    public static void SaveGame()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.spring";
+        Debug.Log(Application.persistentDataPath);
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerData playerData = new PlayerData(player);
+        string scene = SceneManager.GetActiveScene().name;
 
-        formatter.Serialize(stream, playerData);
+        formatter.Serialize(stream, scene);
         stream.Close();
     }
 
-    public static PlayerData LoadGame()
+    public static string LoadGame()
     {
         string path = Application.persistentDataPath + "/player.spring";
         if (File.Exists(path))
@@ -24,7 +26,7 @@ public static class SaveSystem
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
+           string data = formatter.Deserialize(stream) as string;
             stream.Close();
 
             return data;
