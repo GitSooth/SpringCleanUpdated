@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Blower : MonoBehaviour
 {
+    public GameObject player;
     public Transform point;
     public float range = 2f;
     public float strength = 0.035f;
@@ -25,12 +26,17 @@ public class Blower : MonoBehaviour
     {
         Collider2D[] Trash = Physics2D.OverlapCircleAll(point.position, range, trashLayers);
 
-        foreach(Collider2D trash in Trash)
+        foreach (Collider2D trash in Trash)
         {
-            Vector3 direction = trash.transform.position - this.gameObject.transform.position;
-
-
-            trash.transform.position += direction * strength;
+            if (trash.transform.parent == point)
+            {
+                trash.transform.position = point.position;
+            }
+            else
+            {
+                Vector3 direction = trash.transform.position - this.gameObject.transform.position;
+                trash.transform.position += direction * strength;
+            }
         }
     }
 

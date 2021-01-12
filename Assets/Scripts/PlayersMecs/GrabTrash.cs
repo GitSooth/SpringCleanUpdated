@@ -23,10 +23,14 @@ public class GrabTrash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Collider2D trash = Physics2D.OverlapCircle(attackPoint.position, range, trashLayers);
-            trash.transform.parent = attackPoint;
-            trash.transform.position = attackPoint.position;
-            grabbed = true;
+            if (attackPoint.childCount == 0)
+            {
+                Collider2D trash = Physics2D.OverlapCircle(attackPoint.position, range, trashLayers);
+                trash.transform.parent = attackPoint;
+                trash.transform.position = attackPoint.position;
+                grabbed = true;
+            }
+            else { }
         }
 
         if (Input.GetKeyDown(KeyCode.U))
