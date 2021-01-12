@@ -93,7 +93,8 @@ public class TrashManager : MonoBehaviour
     {
         Scene = SceneManager.GetActiveScene().name;
 
-        if (Scene == "4th Level") {
+        if (Scene == "4th Level")
+        {
             foreach (GameObject go in specialList)
             {
                 if (go == null)
@@ -167,7 +168,6 @@ public class TrashManager : MonoBehaviour
 
         if (Scene == "4th Level")
         {
-
             if (specialList.Count == 0)
             {
                 Vector3Int gridPosition = new Vector3Int(sC.x, sC.y, sC.z);
