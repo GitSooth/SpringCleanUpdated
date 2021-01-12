@@ -24,6 +24,7 @@ ScriptedImporter:
     isReadable: 0
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
+    vTOnly: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -42,6 +43,9 @@ ScriptedImporter:
     textureType: 8
     textureShape: 1
     singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
     filterMode: 1
     aniso: 1
     mipBias: 0
@@ -61,6 +65,7 @@ ScriptedImporter:
     maxTextureSizeSet: 0
     compressionQualitySet: 0
     textureFormatSet: 0
+    applyGammaDecoding: 0
   spriteImportData:
   - name: 
     originalName: 
@@ -3416,30 +3421,8 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-  boneGOs:
-  - go: {fileID: -6845320546810094706, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 0
-  - go: {fileID: -4713383949449850637, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 1
-  - go: {fileID: 7293016252087202905, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 2
-  - go: {fileID: 6718541919481644542, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 3
-  - go: {fileID: 1709678566493077848, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 4
-  - go: {fileID: -1997991492292274511, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 5
-  - go: {fileID: -6958321549958147886, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 6
-  - go: {fileID: 851099328436513092, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 7
-  - go: {fileID: 1818692574900218028, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 8
-  - go: {fileID: 8773131056371426157, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 9
-  - go: {fileID: 2562850322031880051, guid: a16c56fb609652745b122668ca4b5488, type: 3}
-    index: 10
   generateGOHierarchy: 0
   textureAssetName: worker Texture
   prefabAssetName: worker Prefab
   spriteLibAssetName: worker Sprite Lib
+  secondarySpriteTextures: []
