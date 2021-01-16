@@ -7,17 +7,35 @@ public class TeleportWrap : MonoBehaviour
     public GameObject Player;
     public GameObject Teleport;
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public GameObject teleport;
+    public bool wrap;
+    // Start is called before the first frame update
+    void Start()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            StartCoroutine("Warp");
-        }
 
-        IEnumerable Warp()
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.tag);
+        if (collision.tag == "Player" && wrap == false)
         {
-            yield return new WaitForSeconds(1);
-            Player.transform.position = new Vector2(Teleport.transform.position.x, Teleport.transform.position.y);
+            collision.gameObject.transform.position = teleport.transform.position;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log(collision.tag);
+        if (collision.tag == "Player" && wrap == true)
+        {
+            wrap = false;
         }
     }
 }
