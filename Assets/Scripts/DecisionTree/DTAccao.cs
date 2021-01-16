@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DTAccao : MonoBehaviour
+public class DTAccao : DTNode
 {
 	// Start is called before the first frame update
 
-	public class DTAction : DTNode
-	{
+	
 		private Action action;
 
-		public DTAction(Action action)
+		public DTAccao(Action action)
 		{
 			this.action = action;
 		}
@@ -20,5 +19,5 @@ public class DTAccao : MonoBehaviour
 		{
 			action();
 		}
-	}
+	
 }

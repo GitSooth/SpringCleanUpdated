@@ -73,4 +73,12 @@ public class PlayerAttack : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag=="Ondas")
+        {
+            TakeDamage(10);
+        }
+    }
 }

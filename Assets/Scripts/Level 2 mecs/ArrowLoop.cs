@@ -11,12 +11,17 @@ public class ArrowLoop : MonoBehaviour
     public Animator swicth3part1;
     public Animator swicth4part1;
 
+    public Animator swicth1part2;
+    public Animator swicth2part2;
+    public Animator swicth3part2;
+    public Animator swicth4part2;
+
     public bool press;
     public bool inside;
     // Start is called before the first frame update
     void Start()
     {
-
+        inside = false;
     }
 
     // Update is called once per frame
@@ -35,12 +40,20 @@ public class ArrowLoop : MonoBehaviour
             inside = true;
             if(press==true)
             {
-             swicth1part1.SetTrigger("");
+          
+
+                swicth1part1.SetTrigger("Transmiction");
+                swicth2part1.SetTrigger("Transmiction2");
+                swicth3part1.SetTrigger("Transmiction3");
+                swicth4part1.SetTrigger("Transmiction4");
             }
 
             else
             {
-                swicth2part1.SetTrigger("");
+                swicth1part1.SetTrigger("Transmiction");
+                swicth2part1.SetTrigger("Transmiction2");
+                swicth3part1.SetTrigger("Transmiction3");
+                swicth4part1.SetTrigger("Transmiction4");
             }
            
         }

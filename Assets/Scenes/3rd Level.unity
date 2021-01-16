@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 138597323}
   - component: {fileID: 138597325}
   - component: {fileID: 138597326}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Swicth (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db2767cfc1932d14588df2d011bc1681, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138597322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.94, y: 2.29, z: -0.196}
+  m_LocalPosition: {x: -1.94, y: 2.29, z: 0}
   m_LocalScale: {x: 0.07492523, y: 0.0702409, z: 0.07492523}
   m_Children: []
   m_Father: {fileID: 0}
@@ -295,8 +295,12 @@ MonoBehaviour:
   swicth2part1: {fileID: 1489271782}
   swicth3part1: {fileID: 316880358}
   swicth4part1: {fileID: 1572027352}
-  press: 0
-  inside: 0
+  swicth1part2: {fileID: 2078209111}
+  swicth2part2: {fileID: 1489271782}
+  swicth3part2: {fileID: 316880358}
+  swicth4part2: {fileID: 1572027352}
+  press: 1
+  inside: 1
 --- !u!1 &189173491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 608618094345651746, guid: 230c44be4c0296743b72da5f6295641c,
@@ -523,13 +527,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316880355}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0160441, y: -1.2731332, z: 6.66}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9999619, w: 0.008726652}
+  m_LocalPosition: {x: -1.0160441, y: -1.2731332, z: 6.4}
   m_LocalScale: {x: 0.13934807, y: 0.13934807, z: 0.13934807}
   m_Children: []
   m_Father: {fileID: 292006551}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 179}
 --- !u!95 &316880358
 Animator:
   serializedVersion: 3
@@ -1853,13 +1857,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489271779}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0013467991, w: 0.9999991}
-  m_LocalPosition: {x: 2.493956, y: 1.0768669, z: 6.66}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9999619, w: 0.008726652}
+  m_LocalPosition: {x: 2.493956, y: 1.0768669, z: 6.4}
   m_LocalScale: {x: 0.08453711, y: 0.08453711, z: 0.08453711}
   m_Children: []
   m_Father: {fileID: 292006551}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.154}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179}
 --- !u!95 &1489271782
 Animator:
   serializedVersion: 3
@@ -2095,13 +2099,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572027349}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.493956, y: -1.1831332, z: 6.66}
+  m_LocalRotation: {x: 0, y: -0, z: 0.9999619, w: -0.008726464}
+  m_LocalPosition: {x: 2.493956, y: -1.1831332, z: 6.4}
   m_LocalScale: {x: 0.14070861, y: 0.15829718, z: 0.14070861}
   m_Children: []
   m_Father: {fileID: 292006551}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 181}
 --- !u!95 &1572027352
 Animator:
   serializedVersion: 3
@@ -2133,7 +2137,7 @@ GameObject:
   - component: {fileID: 1681721815}
   - component: {fileID: 1681721817}
   - component: {fileID: 1681721818}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Swicth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2179,7 +2183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db2767cfc1932d14588df2d011bc1681, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2199,7 +2203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681721814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0.66, z: -0.234}
+  m_LocalPosition: {x: -4.5, y: 0.66, z: 0}
   m_LocalScale: {x: 0.07492523, y: 0.0702409, z: 0.07492523}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2248,6 +2252,10 @@ MonoBehaviour:
   swicth2part1: {fileID: 1489271782}
   swicth3part1: {fileID: 316880358}
   swicth4part1: {fileID: 1572027352}
+  swicth1part2: {fileID: 2078209111}
+  swicth2part2: {fileID: 1489271782}
+  swicth3part2: {fileID: 316880358}
+  swicth4part2: {fileID: 1572027352}
   press: 1
   inside: 1
 --- !u!1 &1727116886
@@ -2292,7 +2300,7 @@ GameObject:
   - component: {fileID: 1752553601}
   - component: {fileID: 1752553603}
   - component: {fileID: 1752553604}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Swicth (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2338,7 +2346,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db2767cfc1932d14588df2d011bc1681, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2358,7 +2366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752553600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.49, y: -1.77, z: -0.196}
+  m_LocalPosition: {x: 2.49, y: -1.77, z: 0}
   m_LocalScale: {x: 0.07492523, y: 0.0702409, z: 0.07492523}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2403,12 +2411,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swicth: {fileID: 1752553600}
-  swicth1part1: {fileID: 0}
-  swicth2part1: {fileID: 0}
-  swicth3part1: {fileID: 0}
-  swicth4part1: {fileID: 0}
-  press: 0
-  inside: 0
+  swicth1part1: {fileID: 2078209111}
+  swicth2part1: {fileID: 1489271782}
+  swicth3part1: {fileID: 316880358}
+  swicth4part1: {fileID: 1572027352}
+  swicth1part2: {fileID: 2078209111}
+  swicth2part2: {fileID: 1489271782}
+  swicth3part2: {fileID: 316880358}
+  swicth4part2: {fileID: 1572027352}
+  press: 1
+  inside: 1
 --- !u!1001 &1757730720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2957,13 +2969,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078209108}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0530441, y: 0.97586673, z: 6.66}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9999425, w: -0.010728578}
+  m_LocalPosition: {x: -1.0530441, y: 0.97586673, z: 6.4}
   m_LocalScale: {x: 0.09920132, y: 0.09920132, z: 0.09920132}
   m_Children: []
   m_Father: {fileID: 292006551}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -181.229}
 --- !u!95 &2078209111
 Animator:
   serializedVersion: 3
