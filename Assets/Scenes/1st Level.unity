@@ -229,18 +229,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &80316907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5866468053849094010, guid: e9586b9619fea2141bde35f8ffc2d7ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 5866468053903195793}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &130315965 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6521626764083867981, guid: 38778b622ed9a5a4ba424bab478ba401,
@@ -1855,7 +1843,7 @@ PrefabInstance:
     - target: {fileID: 2552478363847920109, guid: 074b5563e10e1cd47a3168802290d730,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4321381457597357697, guid: 074b5563e10e1cd47a3168802290d730,
         type: 3}
@@ -2185,12 +2173,12 @@ PrefabInstance:
     - target: {fileID: 6521626765019291604, guid: 38778b622ed9a5a4ba424bab478ba401,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521626765019291604, guid: 38778b622ed9a5a4ba424bab478ba401,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38778b622ed9a5a4ba424bab478ba401, type: 3}
@@ -5311,7 +5299,7 @@ PrefabInstance:
         type: 3}
       propertyPath: text
       value: 
-      objectReference: {fileID: 80316907}
+      objectReference: {fileID: 0}
     - target: {fileID: 3321225169959919890, guid: fa8244ccd4e894a439e8f86552b124ae,
         type: 3}
       propertyPath: cLB.x
