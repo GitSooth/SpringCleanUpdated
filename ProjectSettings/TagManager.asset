@@ -12,6 +12,7 @@ TagManager:
   - TrashCan
   - Trash
   - LogMarker
+  - Waves
   layers:
   - Default
   - TransparentFX

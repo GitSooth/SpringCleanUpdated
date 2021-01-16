@@ -4,52 +4,17 @@ using UnityEngine;
 
 public class WavesInteraction : MonoBehaviour
 {
-    public GameObject swicth;
-
-    public Animator waves;
-
+    public GameObject player;
     public bool trap;
     public bool inside;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.tag);
-        if (collision.tag == "Player" && trap == false)
+        if (collision.tag == "Player")
         {
-            /*Passa verdadeiro para falsa e vice versa*/
-          
-            if (trap == true)
-            {
-                waves.SetTrigger("");
-            }
-
-            else
-            {
-                waves.SetTrigger("");
-            }
-
-        }
-
-
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log(collision.tag);
-        if (collision.tag == "Player" && inside == true)
-        {
-            inside = false;
+            Debug.Log("Inside wave");
+            player.transform.position += new Vector3(0, 1f, 0);
         }
     }
 }

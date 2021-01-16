@@ -293,9 +293,11 @@ GameObject:
   - component: {fileID: 141637675}
   - component: {fileID: 141637676}
   - component: {fileID: 141637677}
+  - component: {fileID: 141637678}
+  - component: {fileID: 141637679}
   m_Layer: 0
   m_Name: Espuma Ondas
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,8 +310,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141637674}
   m_LocalRotation: {x: -0, y: -0, z: 0.29053447, w: 0.95686454}
-  m_LocalPosition: {x: -31.7, y: 1.3, z: -0.3}
-  m_LocalScale: {x: 0.51871, y: 0.51871, z: 0.51871}
+  m_LocalPosition: {x: -32.3556, y: 1.0478, z: -0.3}
+  m_LocalScale: {x: 0.6636376, y: 0.583445, z: 0.51871}
   m_Children: []
   m_Father: {fileID: 432490022}
   m_RootOrder: 0
@@ -391,6 +393,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &141637678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141637674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &141637679
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141637674}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &141657266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,6 +678,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1789386373}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &354004662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354004650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 354004650}
+  trap: 0
+  inside: 0
 --- !u!1001 &387360174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1866,9 +1919,11 @@ GameObject:
   - component: {fileID: 1129726371}
   - component: {fileID: 1129726372}
   - component: {fileID: 1129726373}
+  - component: {fileID: 1129726374}
+  - component: {fileID: 1129726375}
   m_Layer: 0
   m_Name: Espuma Ondas (1)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1964,6 +2019,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &1129726374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129726370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &1129726375
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129726370}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1130233491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,9 +2066,11 @@ GameObject:
   - component: {fileID: 1130233492}
   - component: {fileID: 1130233493}
   - component: {fileID: 1130233494}
+  - component: {fileID: 1130233495}
+  - component: {fileID: 1130233496}
   m_Layer: 0
   m_Name: Espuma Ondas (8)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2073,6 +2166,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &1130233495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130233491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &1130233496
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130233491}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!4 &1149159482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7111475029691732553, guid: e9586b9619fea2141bde35f8ffc2d7ed,
@@ -2739,7 +2868,7 @@ PrefabInstance:
     - target: {fileID: 7889387594317114603, guid: e9586b9619fea2141bde35f8ffc2d7ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7889387594317114603, guid: e9586b9619fea2141bde35f8ffc2d7ed,
         type: 3}
@@ -2898,9 +3027,11 @@ GameObject:
   - component: {fileID: 1897573480}
   - component: {fileID: 1897573481}
   - component: {fileID: 1897573482}
+  - component: {fileID: 1897573483}
+  - component: {fileID: 1897573484}
   m_Layer: 0
   m_Name: Espuma Ondas (4)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2996,6 +3127,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &1897573483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897573479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &1897573484
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897573479}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1922566227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,9 +3379,11 @@ GameObject:
   - component: {fileID: 1932691401}
   - component: {fileID: 1932691402}
   - component: {fileID: 1932691403}
+  - component: {fileID: 1932691404}
+  - component: {fileID: 1932691405}
   m_Layer: 0
   m_Name: Espuma Ondas (5)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3310,6 +3479,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &1932691404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932691400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &1932691405
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932691400}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &1937752041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3698,9 +3903,11 @@ GameObject:
   - component: {fileID: 2052728121}
   - component: {fileID: 2052728122}
   - component: {fileID: 2052728123}
+  - component: {fileID: 2052728124}
+  - component: {fileID: 2052728125}
   m_Layer: 0
   m_Name: Espuma Ondas (7)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3796,6 +4003,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &2052728124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052728120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &2052728125
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052728120}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2057672812
 GameObject:
   m_ObjectHideFlags: 0
@@ -3807,9 +4050,11 @@ GameObject:
   - component: {fileID: 2057672813}
   - component: {fileID: 2057672814}
   - component: {fileID: 2057672815}
+  - component: {fileID: 2057672816}
+  - component: {fileID: 2057672817}
   m_Layer: 0
   m_Name: Espuma Ondas (2)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3905,6 +4150,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &2057672816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057672812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &2057672817
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057672812}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2061208220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 608618094345651746, guid: 230c44be4c0296743b72da5f6295641c,
@@ -3928,9 +4209,11 @@ GameObject:
   - component: {fileID: 2096336499}
   - component: {fileID: 2096336500}
   - component: {fileID: 2096336501}
+  - component: {fileID: 2096336502}
+  - component: {fileID: 2096336503}
   m_Layer: 0
   m_Name: Espuma Ondas (6)
-  m_TagString: Untagged
+  m_TagString: Waves
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4026,3 +4309,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.35, y: 3.79}
   m_EdgeRadius: 0
+--- !u!114 &2096336502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096336498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e53d25afa5d5a4297f4e1b113cf2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trap: 0
+  inside: 0
+--- !u!50 &2096336503
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096336498}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
