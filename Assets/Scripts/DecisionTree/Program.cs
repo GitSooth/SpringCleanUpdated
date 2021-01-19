@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Program 
+public class Program : MonoBehaviour
 {
-    static void Main(string[]Main)
+
+    DTNode _distance;
+     void Start()
     {
         /*
-             *      closerlonger < 5 ?
-             *          /  \
-             *      TRUE     FALSE
-             *       /       \
-             *    SHOOT     distancecloser > 0?
-             *                  /  \
-             *                TRUE  FALSE
-             *                /       \
-             *              THROW     RUN
-             */
+            *      closerlonger < 5 ?
+            *          /  \
+            *      TRUE     FALSE
+            *       /       \
+            *      Ataque   distancecloser > 3?
+            *                  /  \
+            *                TRUE  FALSE
+            *                /       \
+            *              ATTACK     FOLLOW
+            */
 
-        float distancelonger=5;
-        float distancecloser = 5;
+        float distancelonger =5;
+        float distancecloser = 3;
 
         DTAccao _ataque = new DTAccao(()=> Console.WriteLine("Attack!"));
         DTAccao throw_ = new DTAccao(() =>
@@ -29,17 +31,19 @@ public class Program
               Console.WriteLine("Attack the target");
           });
 
-        DTAccao _run = new DTAccao(() => Console.WriteLine("Move target"));
+        DTAccao _run = new DTAccao(() => Console.WriteLine("Follow target"));
 
         // Closures
         DTCondiccao _distancecloser = new DTCondiccao(() => distancecloser > 0, _ataque, _run);
-        DTCondiccao _distance = new DTCondiccao(() => distancelonger < 5, _ataque, _distancecloser);
+        _distance = new DTCondiccao(() => distancelonger < 5, _ataque, _distancecloser);
 
+   
+     
+    }
+
+    private void Update()
+    {
         _distance.Run();
-        distancelonger = 10;
-        _distance.Run();
-        distancecloser++;
-        _distance.Run();
-        _distance.Run();
+      
     }
 }
