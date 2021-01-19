@@ -7,15 +7,17 @@ using UnityEngine;
 public class SeekAI : SteeringBevaviour
 {
 	[SerializeField]
-	float Aceral = 1f;
+	float accel = 1f;
 
-    public override Steering GetSteering(MovementeInfoAI EmenyAI, MovementeInfoAI target)
+    public override Steering GetSteering(MovementInfoAI EmenyAI, MovementInfoAI target)
     {
         Vector3 direcao = target.position - EmenyAI.position;
 
         Steering streering = new Steering();
-        streering.linear = direcao.normalized * Aceral;
+        streering.linear = direcao.normalized * accel;
 
         return streering;
     }
+
+    
 }

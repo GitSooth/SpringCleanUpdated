@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class MovementeInfoAI 
+public class MovementInfoAI
 {
 	// Current position
 	public Vector3 position;

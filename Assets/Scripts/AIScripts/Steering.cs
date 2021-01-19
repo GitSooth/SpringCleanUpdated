@@ -5,6 +5,5 @@ using UnityEngine;
 public class Steering
 {
 	public Vector3 linear;
-
 	public float angular;
 }

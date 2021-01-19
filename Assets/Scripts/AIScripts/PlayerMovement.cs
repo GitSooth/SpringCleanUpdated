@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    MovementeInfoAI info;
+    MovementInfoAI info;
     [SerializeField]
     float linearDrag = 0.95f;
     [SerializeField]
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float walkVelocity = 8f;
 
-    public MovementeInfoAI GetInfo => info;
+    public MovementInfoAI GetInfo => info;
 
     void Awake()
     {

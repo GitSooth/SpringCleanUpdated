@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class SteeringBevaviour : ScriptableObject
 { 
-	public abstract Steering GetSteering(MovementeInfoAI EmenyAI, MovementeInfoAI target);
+	public abstract Steering GetSteering(MovementInfoAI EmenyAI, MovementInfoAI target);
 }

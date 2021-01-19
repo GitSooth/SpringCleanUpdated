@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementManagerAI : MonoBehaviour
 {
     [SerializeField]
-    MovementeInfoAI info;
+    MovementInfoAI info;
     [SerializeField]
     SteeringBevaviour steeringBehaviour;
     [SerializeField, Range(0, 1)]
@@ -13,8 +13,8 @@ public class MovementManagerAI : MonoBehaviour
     [SerializeField, Tooltip("NPC max velocity")]
     float maxVelocity = 2f;
 
-    MovementeInfoAI target;
-    public MovementeInfoAI GetInfo => info;
+    MovementInfoAI target;
+    public MovementInfoAI GetInfo => info;
     // Start is called before the first frame update
     void Awake()
     {
