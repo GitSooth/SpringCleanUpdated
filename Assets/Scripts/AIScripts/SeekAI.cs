@@ -18,6 +18,4 @@ public class SeekAI : SteeringBevaviour
 
         return streering;
     }
-
-    
 }

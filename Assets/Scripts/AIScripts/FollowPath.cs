@@ -9,36 +9,50 @@ public class FollowPath : SeekAI
     float maxSpeed = 5f;
     float timeToTarget = 5f;
     float maxAccel = 2f;
+    public Vector3[] waypoints;
 
-    int targetIndex = 0;
-    
+    int index;
+
     public Grid grid;
+
+    private void Awake()
+    {
+        grid = FindObjectOfType<Grid>();
+    }
 
     public override Steering GetSteering(MovementInfoAI enemy, MovementInfoAI target)
     {
         Steering steering = new Steering();
 
-        Vector3 direction = grid.path[0].worldPosition - enemy.position;
+        waypoints = new Vector3[grid.path.Count];
 
-        direction.z = -0.06f;
-
-        float distance = direction.magnitude;
-
-        if (distance <= 0.001f && enemy.position == grid.path[grid.path.Count -1])
+        for (int i = 0; i < grid.path.Count; i++)
         {
-            return steering;
+            waypoints[i] = grid.path[i].worldPosition;
+            waypoints[i].z = -0.06f;
         }
-        float targetSpeed;
-        if (distance > slowRadius) targetSpeed = maxSpeed;
-        else targetSpeed = maxSpeed * distance / slowRadius;
 
-        Vector3 targetVelocity = direction.normalized;
+        Debug.Log(waypoints.Length);
 
-        targetVelocity *= targetSpeed;
-        steering.linear = targetVelocity - enemy.velocity;
-        steering.linear /= timeToTarget;
+        for (index = 0; index < waypoints.Length; index++)
+        {
+            target.position = waypoints[index];
+            Vector3 direction = target.position - enemy.position;
 
-        steering.linear = Vector3.ClampMagnitude(steering.linear, maxAccel);
+            float distance = Vector3.Distance(target.position, enemy.position);
+
+            if(distance > 0.1f)
+            {
+
+                Vector3 targetVelocity = direction.normalized;
+
+                steering.linear = direction.normalized * maxAccel;
+                //return steering;
+            }
+            else return steering;
+        }
+
+        enemy.position.z = -0.06f;
 
         return steering;
     }

@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public Animator anim;
 
+    public AudioManager audio;
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
@@ -47,7 +48,8 @@ public class PlayerAttack : MonoBehaviour
     {
         //Animaçao de ataque
         anim.SetTrigger("Attack");
-
+        
+        audio.Play("swipe");
         //Detect enemies
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 

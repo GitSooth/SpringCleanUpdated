@@ -7,6 +7,7 @@ public class FreeMovement : MonoBehaviour
     public float moveSpeed;
     public float maxSpeed = 5f;
 
+    public AudioManager audio;
     public Animator anim;
     public Transform player;
     public Transform attack;
@@ -45,6 +46,7 @@ public class FreeMovement : MonoBehaviour
         {
             moveSpeed = maxSpeed;
             player.position -= new Vector3(0.0f, -Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime, 0.0f);
+
         }
 
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
@@ -52,7 +54,12 @@ public class FreeMovement : MonoBehaviour
             moveSpeed = 0f;
         }
 
-        if (moveSpeed > 0)
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            audio.Play("feet");
+        else if (Input.GetKeyUp(KeyCode.W) && Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.S) && Input.GetKeyUp(KeyCode.D))
+            audio.Stop("feet");
+
+        if (moveSpeed != 0)
         {
             anim.SetBool("Moving", true);
         }

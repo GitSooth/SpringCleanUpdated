@@ -6,7 +6,6 @@ public class Pathfinding : MonoBehaviour
 {
     public Transform seeker, target;
     Grid grid;
-    public Vector3[] waypoints;
     void Awake()
     {
         grid = GetComponent<Grid>();
