@@ -19,7 +19,7 @@ public class Pathfinding : MonoBehaviour
     public void FindPath(Vector3 startPos, Vector3 targetPos)
     {
         Node startNode = grid.NodeFromWorldPoint(startPos);
-        Node targetNode = grid.NodeFromWorldPoint(targetPos);
+        Node targetNode = grid.NodeFromWorldPoint(startPos);
 
         List<Node> openSet = new List<Node>();
         HashSet<Node> closedSet = new HashSet<Node>();
@@ -80,15 +80,6 @@ public class Pathfinding : MonoBehaviour
         path.Reverse();
 
         grid.path = path;
-
-        Vector3[] waypoints = new Vector3[path.Count];
-
-        int i = 0;
-        foreach (Node n in path)
-        {
-            waypoints[i] = n.worldPosition;
-            i++;
-        }
     }
 
     int GetDistance(Node nodeA, Node nodeB)

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: FollowPath
   m_EditorClassIdentifier: 
   accel: 1
+  grid: {fileID: 0}

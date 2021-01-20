@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Grid : MonoBehaviour {
-
+    public Transform player, enemy;
 	public LayerMask unwalkableMask;
 	public Vector2 gridWorldSize;
 	public float nodeRadius;
@@ -58,8 +58,8 @@ public class Grid : MonoBehaviour {
 	public Node NodeFromWorldPoint(Vector3 worldPosition) {
 		float percentX = (worldPosition.x + gridWorldSize.x/2) / gridWorldSize.x;
 		float percentY = (worldPosition.y + gridWorldSize.y/2) / gridWorldSize.y;
-		percentX = Mathf.Clamp01(percentX);
-		percentY = Mathf.Clamp01(percentY);
+		//percentX = Mathf.Clamp01(percentX);
+		//percentY = Mathf.Clamp01(percentY);
 
 		int x = Mathf.RoundToInt((gridSizeX-1) * percentX);
 		int y = Mathf.RoundToInt((gridSizeY-1) * percentY);
@@ -69,10 +69,13 @@ public class Grid : MonoBehaviour {
 	public List<Node> path;
 	void OnDrawGizmos() {
 		Gizmos.DrawWireCube(transform.position,new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
-
+        Node playerNode = NodeFromWorldPoint(player.position);
+        Node enemyNode = NodeFromWorldPoint(enemy.position);
 		if (grid != null) {
 			foreach (Node n in grid) {
 				Gizmos.color = (n.walkable)?Color.white:Color.red;
+                if (n == playerNode) Gizmos.color = Color.cyan;
+                if (n == enemyNode) Gizmos.color = Color.yellow;
 				if (path != null)
 					if (path.Contains(n))
 						Gizmos.color = Color.black;

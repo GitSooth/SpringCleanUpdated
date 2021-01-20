@@ -15,6 +15,7 @@ public class FollowPath : SeekAI
 
     public Grid grid;
 
+<<<<<<< Updated upstream
     private void Awake()
     {
         grid = FindObjectOfType<Grid>();
@@ -53,7 +54,32 @@ public class FollowPath : SeekAI
         }
 
         enemy.position.z = -0.06f;
+=======
+    //public override Steering GetSteering(MovementInfoAI enemy, MovementInfoAI target)
+    //{
+    //    Steering steering = new Steering();
 
-        return steering;
-    }
+    //    Vector3 direction = grid.path[0].worldPosition - enemy.position;
+
+    //    direction.z = -0.06f;
+
+    //    float distance = direction.magnitude;
+
+    //    float targetSpeed;
+    //    if (distance > slowRadius) targetSpeed = maxSpeed;
+    //    else targetSpeed = maxSpeed * distance / slowRadius;
+
+    //    Vector3 targetVelocity = direction.normalized;
+
+    //    targetVelocity *= targetSpeed;
+    //    steering.linear = targetVelocity - enemy.velocity;
+    //    steering.linear /= timeToTarget;
+
+    //    enemy.position.z = -0.06f;
+>>>>>>> Stashed changes
+
+    //    steering.linear = Vector3.ClampMagnitude(steering.linear, maxAccel);
+
+    //    return steering;
+    //}
 }
