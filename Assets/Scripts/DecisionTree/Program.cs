@@ -10,11 +10,11 @@ public class Program : MonoBehaviour
      void Start()
     {
         /*
-            *      closerlonger < 5 ?
+            *       Targetrange < 5 ?
             *          /  \
-            *      TRUE     FALSE
+            *      TRUE   FALSE
             *       /       \
-            *      Ataque   distancecloser > 3?
+            *    Follow   distancecloser > 3?
             *                  /  \
             *                TRUE  FALSE
             *                /       \
@@ -24,18 +24,18 @@ public class Program : MonoBehaviour
         float distancelonger =5;
         float distancecloser = 3;
 
-        DTAccao _ataque = new DTAccao(()=> Console.WriteLine("Attack!"));
-        DTAccao throw_ = new DTAccao(() =>
+        DTAccao _follow = new DTAccao(()=> Debug.Log("Follow target"));
+        DTAccao _Attack = new DTAccao(() =>
           {
               distancecloser--;
-              Console.WriteLine("Attack the target");
+              Debug.Log("Attack the target");
           });
 
-        DTAccao _run = new DTAccao(() => Console.WriteLine("Follow target"));
+        DTAccao _run = new DTAccao(() => Debug.Log("Follow target"));
 
         // Closures
-        DTCondiccao _distancecloser = new DTCondiccao(() => distancecloser > 0, _ataque, _run);
-        _distance = new DTCondiccao(() => distancelonger < 5, _ataque, _distancecloser);
+        DTCondiccao _distancecloser = new DTCondiccao(() => distancecloser > 0, _follow, _run);
+        _distance = new DTCondiccao(() => distancelonger < 5, _follow, _distancecloser);
 
    
      
@@ -44,6 +44,5 @@ public class Program : MonoBehaviour
     private void Update()
     {
         _distance.Run();
-      
     }
 }
