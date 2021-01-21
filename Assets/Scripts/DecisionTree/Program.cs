@@ -6,10 +6,10 @@ using System;
 public class Program : MonoBehaviour
 {
     public Transform target;
-    float detectionRadius = 5f;
+    float detectionRadius = 5f, attackRadius = 1f;
     float distance;
-    public bool following = false;
-    DTCondiccao inRange;
+    public bool following = false, attack = false;
+    DTCondiccao inRange, isAttacking;
 
      void Start()
     {
@@ -25,21 +25,23 @@ public class Program : MonoBehaviour
             *        
             *        
             */
-        
     }
 
     private void Update()
     {
         DTAccao _follow = new DTAccao(() => following = true);
         DTAccao _stop = new DTAccao(() => following = false);
+        DTAccao _attack = new DTAccao(() => attack = true);
+        DTAccao _stopAttacking = new DTAccao(() => attack = false);
 
         // Closures
         Vector3 direction = transform.position - target.position;
         float distance = direction.magnitude;
 
         inRange = new DTCondiccao(() => (distance) <= detectionRadius, _follow, _stop);
-
-        Debug.Log(distance);
+        isAttacking = new DTCondiccao(() => (distance) <= attackRadius, _attack, _stopAttacking);
+        
         inRange.Run();
+        isAttacking.Run();
     }
 }

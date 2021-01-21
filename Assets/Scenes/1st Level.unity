@@ -1181,6 +1181,26 @@ PrefabInstance:
       propertyPath: player1
       value: 
       objectReference: {fileID: 1771207706459839109}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: upLimit
+      value: -27.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: downLimit
+      value: -58.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: leftLimit
+      value: -114.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: rightLimit
+      value: -61.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8345427002802719126, guid: 6a61c29815afa3d42a51f34395bc944e,
         type: 3}
       propertyPath: m_RootOrder
@@ -2091,7 +2111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &879612104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3588,6 +3608,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 1771207706459839109}
   distance: 15
+  leftLimit: -116.98
+  rightLimit: -58.9
+  upLimit: -18.9
+  downLimit: -67.68
 --- !u!81 &1662123348
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4523,7 +4547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b529b27784898644b5159e834ee39db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1771207706459839109}
 --- !u!1001 &1921387432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5147,6 +5170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1089385cd12514eafb2e2d92579462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1771207706459839120}
+  following: 0
+  attack: 0
 --- !u!114 &2135385792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,7 +5190,7 @@ MonoBehaviour:
     orientation: 0
     velocity: {x: 0, y: 0, z: 0}
     rotation: 0
-  steeringBehaviour: {fileID: 11400000, guid: 6455ef7b1b63e1b4c8dcf6310d2e5ad9, type: 2}
+  steeringBehaviour: {fileID: 11400000, guid: b852ef9d38233924183fd80b87fa8f1a, type: 2}
   linearDrag: 0.95
   angularDrag: 0.95
   maxVelocity: 5
@@ -5255,6 +5281,12 @@ PrefabInstance:
 --- !u!1 &1771207706459839109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5331551238924968980, guid: e9586b9619fea2141bde35f8ffc2d7ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 5866468053903195793}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1771207706459839120 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7889387594317114603, guid: e9586b9619fea2141bde35f8ffc2d7ed,
     type: 3}
   m_PrefabInstance: {fileID: 5866468053903195793}
   m_PrefabAsset: {fileID: 0}

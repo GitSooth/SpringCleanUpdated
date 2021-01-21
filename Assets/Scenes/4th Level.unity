@@ -1103,6 +1103,21 @@ PrefabInstance:
       propertyPath: player1
       value: 
       objectReference: {fileID: 354004650}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: downLimit
+      value: -64.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: leftLimit
+      value: -81.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345427002802719125, guid: 6a61c29815afa3d42a51f34395bc944e,
+        type: 3}
+      propertyPath: rightLimit
+      value: -16.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8345427002802719126, guid: 6a61c29815afa3d42a51f34395bc944e,
         type: 3}
       propertyPath: m_RootOrder
@@ -2007,6 +2022,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 354004650}
   distance: 3
+  leftLimit: -82.29
+  rightLimit: -16
+  upLimit: -1.7
+  downLimit: -71.6
 --- !u!1 &1081441151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 608618094345651746, guid: 230c44be4c0296743b72da5f6295641c,
