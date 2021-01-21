@@ -19,8 +19,8 @@ public class Pathfinding : MonoBehaviour
     public void FindPath(Vector3 startPos, Vector3 targetPos)
     {
         Node startNode = grid.NodeFromWorldPoint(startPos);
-        Node targetNode = grid.NodeFromWorldPoint(startPos);
-
+        Node targetNode = grid.NodeFromWorldPoint(targetPos);
+        
         List<Node> openSet = new List<Node>();
         HashSet<Node> closedSet = new HashSet<Node>();
         openSet.Add(startNode);
@@ -30,7 +30,7 @@ public class Pathfinding : MonoBehaviour
             Node node = openSet[0];
             for (int i = 1; i < openSet.Count; i++)
             {
-                if (openSet[i].fCost < node.fCost || openSet[i].fCost == node.fCost)
+                if (openSet[i].fCost <= node.fCost)
                 {
                     if (openSet[i].hCost < node.hCost)
                         node = openSet[i];
@@ -65,6 +65,7 @@ public class Pathfinding : MonoBehaviour
                 }
             }
         }
+        print("no path");
     }
 
     void RetracePath(Node startNode, Node endNode)
@@ -78,7 +79,6 @@ public class Pathfinding : MonoBehaviour
             currentNode = currentNode.parent;
         }
         path.Reverse();
-
         grid.path = path;
     }
 
