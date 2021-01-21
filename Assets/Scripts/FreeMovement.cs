@@ -54,16 +54,13 @@ public class FreeMovement : MonoBehaviour
             moveSpeed = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-            audio.Play("feet");
-        else if (Input.GetKeyUp(KeyCode.W) && Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.S) && Input.GetKeyUp(KeyCode.D))
-            audio.Stop("feet");
-
-        if (moveSpeed != 0)
+        if (moveSpeed > 0)
         {
             anim.SetBool("Moving", true);
+            audio.Play("feet");
         }
 
         else anim.SetBool("Moving", false);
+        audio.Stop("feet");
     }
 }

@@ -5,44 +5,41 @@ using System;
 
 public class Program : MonoBehaviour
 {
+    public Transform target;
+    float detectionRadius = 5f;
+    float distance;
+    public bool following = false;
+    DTCondiccao inRange;
 
-    DTNode _distance;
      void Start()
     {
         /*
-            *       Targetrange < 5 ?
-            *          /  \
-            *      TRUE   FALSE
-            *       /       \
-            *    Follow   distancecloser > 3?
-            *                  /  \
-            *                TRUE  FALSE
-            *                /       \
-            *              ATTACK     FOLLOW
+            *    distance > detectionRadius?
+            *            /  \
+            *          TRUE  FALSE
+            *          /       \
+            *        Follow     Stay still
+            *        
+            *        
+            *        
+            *        
+            *        
             */
-
-        float distancelonger =5;
-        float distancecloser = 3;
-
-        DTAccao _follow = new DTAccao(()=> Debug.Log("Follow target"));
-        DTAccao _Attack = new DTAccao(() =>
-          {
-              distancecloser--;
-              Debug.Log("Attack the target");
-          });
-
-        DTAccao _run = new DTAccao(() => Debug.Log("Follow target"));
-
-        // Closures
-        DTCondiccao _distancecloser = new DTCondiccao(() => distancecloser > 0, _follow, _run);
-        _distance = new DTCondiccao(() => distancelonger < 5, _follow, _distancecloser);
-
-   
-     
+        
     }
 
     private void Update()
     {
-        _distance.Run();
+        DTAccao _follow = new DTAccao(() => following = true);
+        DTAccao _stop = new DTAccao(() => following = false);
+
+        // Closures
+        Vector3 direction = transform.position - target.position;
+        float distance = direction.magnitude;
+
+        inRange = new DTCondiccao(() => (distance) <= detectionRadius, _follow, _stop);
+
+        Debug.Log(distance);
+        inRange.Run();
     }
 }

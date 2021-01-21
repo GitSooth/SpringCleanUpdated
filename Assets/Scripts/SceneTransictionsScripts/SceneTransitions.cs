@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneTransitions : MonoBehaviour
 {
 	public Animator animator;
-	public string SceneTransmission;
+	public string SceneTransition;
 	void Update()
-	{
 
+	{
 		if (Input.GetMouseButtonDown(0))
 		{
 			StartCoroutine(LoadScene().ToString());
@@ -22,7 +22,7 @@ public class SceneTransitions : MonoBehaviour
 	{
 		animator.SetTrigger("LevelsTransEnd");
 		yield return new WaitForSeconds(2.0f);
-		SceneManager.LoadScene(SceneTransmission);
+		SceneManager.LoadScene(SceneTransition);
 	}
 
 
@@ -30,7 +30,7 @@ public class SceneTransitions : MonoBehaviour
     {
         animator.SetTrigger("LevelsTransEnd");
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(SceneTransmission);
+        SceneManager.LoadScene(SceneTransition);
     }
 
 
@@ -38,6 +38,6 @@ public class SceneTransitions : MonoBehaviour
     {
         animator.SetTrigger("LevelsTransEnd");
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(SceneTransmission);
+        SceneManager.LoadScene(SceneTransition);
     }
 }

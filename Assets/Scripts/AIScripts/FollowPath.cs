@@ -11,24 +11,31 @@ public class FollowPath : SeekAI
     float maxAccel = 2f;
     public Vector3[] waypoints;
 
-    int index;
-
     public Grid grid;
 
     private void Start()
     {
         // grid = FindObjectOfType<Grid>();
-        grid = GameObject.Find("AStar").GetComponent<Grid>();
+        grid = GameObject.FindGameObjectWithTag("AStar").GetComponent<Grid>();
+        
     }
 
     public override Steering GetSteering(MovementInfoAI enemy, MovementInfoAI target)
     {
-        if (!grid) grid = GameObject.Find("AStar").GetComponent<Grid>();
+        bool follow = GameObject.Find("Square").GetComponent<Program>().following;
+        if (!grid) grid = GameObject.FindGameObjectWithTag("AStar").GetComponent<Grid>();
 
-        Steering steering = new Steering();
-        if (grid.path.Count > 1)
+        if (follow == true)
         {
-            target.position = grid.path[1].worldPosition;
+            Steering steering = new Steering();
+            if (grid.path.Count > 1)
+            {
+                target.position = grid.path[1].worldPosition;
+            }
+        }
+        else
+        {
+            target.position = enemy.position;
         }
         return base.GetSteering(enemy, target);
     }
