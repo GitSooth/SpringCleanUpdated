@@ -6,7 +6,8 @@ using System;
 public class Program : MonoBehaviour
 {
     public Transform target;
-    float detectionRadius = 5f, attackRadius = 1f;
+    public float detectionRadius;
+    public float attackRadius = 1f;
     float distance;
     public bool following = false, attack = false;
     DTCondiccao inRange, isAttacking;
@@ -43,5 +44,10 @@ public class Program : MonoBehaviour
         
         inRange.Run();
         isAttacking.Run();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(this.transform.position, detectionRadius);
     }
 }
