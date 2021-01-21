@@ -944,6 +944,11 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866468053915778392, guid: e9586b9619fea2141bde35f8ffc2d7ed,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.14
+      objectReference: {fileID: 0}
     - target: {fileID: 5866468053975085720, guid: e9586b9619fea2141bde35f8ffc2d7ed,
         type: 3}
       propertyPath: range
@@ -1796,6 +1801,7 @@ GameObject:
   - component: {fileID: 763598377}
   - component: {fileID: 763598379}
   - component: {fileID: 763598380}
+  - component: {fileID: 763598381}
   m_Layer: 0
   m_Name: Square
   m_TagString: Enemy
@@ -1905,6 +1911,19 @@ MonoBehaviour:
   target: {fileID: 1303225481}
   following: 0
   attack: 0
+--- !u!114 &763598381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763598376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94447ac653d75fa4786e929e77416937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1303225480}
 --- !u!1 &797802418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 608618094345651746, guid: 230c44be4c0296743b72da5f6295641c,

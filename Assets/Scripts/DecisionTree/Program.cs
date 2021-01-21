@@ -34,7 +34,7 @@ public class Program : MonoBehaviour
         DTAccao _attack = new DTAccao(() => attack = true);
         DTAccao _stopAttacking = new DTAccao(() => attack = false);
 
-        // Closures
+        // Closures     
         Vector3 direction = transform.position - target.position;
         float distance = direction.magnitude;
 

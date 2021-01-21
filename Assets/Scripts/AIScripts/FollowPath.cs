@@ -17,12 +17,11 @@ public class FollowPath : SeekAI
     {
         // grid = FindObjectOfType<Grid>();
         grid = GameObject.FindGameObjectWithTag("AStar").GetComponent<Grid>();
-        
     }
 
     public override Steering GetSteering(MovementInfoAI enemy, MovementInfoAI target)
     {
-        bool follow = GameObject.Find("Square").GetComponent<Program>().following;
+        bool follow = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Program>().following;
         if (!grid) grid = GameObject.FindGameObjectWithTag("AStar").GetComponent<Grid>();
 
         if (follow == true)

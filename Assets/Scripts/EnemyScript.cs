@@ -44,6 +44,6 @@ public class EnemyScript : MonoBehaviour
 
         //Death animation        
 
-        this.gameObject.SetActive(false);
+        Destroy(this.gameObject);
     }
 }
