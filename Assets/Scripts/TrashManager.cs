@@ -346,6 +346,7 @@ public class TrashManager : MonoBehaviour
                     SceneManager.LoadScene("4th Level");
                     break;
                 case 5:
+                    SceneManager.LoadScene("FinalScene");
                     break;
 
             }
