@@ -104,7 +104,7 @@ public class FreeMovement : MonoBehaviour
 
             direction.Normalize();
 
-            enemy.transform.position += direction * pushStrength;
+            enemy.transform.position -= direction * pushStrength;
         }
     }
 
