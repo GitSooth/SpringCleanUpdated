@@ -6,6 +6,7 @@ public class Pathfinding : MonoBehaviour
 {
     public Transform seeker, target;
     Grid grid;
+    int targetIndex;
     void Awake()
     {
         grid = GetComponent<Grid>();
@@ -13,7 +14,13 @@ public class Pathfinding : MonoBehaviour
 
     void Update()
     {
-        FindPath(seeker.position, target.position);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (target == null)
+        {
+            target = enemies[targetIndex].transform;
+            targetIndex++;
+        }
+        FindPath(enemies[targetIndex].transform.position, target.position);
     }
 
     public void FindPath(Vector3 startPos, Vector3 targetPos)
@@ -65,7 +72,7 @@ public class Pathfinding : MonoBehaviour
                 }
             }
         }
-        print("no path");
+        //print("no path");
     }
 
     void RetracePath(Node startNode, Node endNode)

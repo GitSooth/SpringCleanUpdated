@@ -106,13 +106,16 @@ public class TrashManager : MonoBehaviour
             }
         }
 
-        foreach (GameObject go in trashList1)
+        if (Scene != "4th Level")
         {
-            if (go == null)
+            foreach (GameObject go in trashList1)
             {
-                trashList1.Remove(go);
-                pontos += 15;
-                text.text = ($"Score: {pontos}");
+                if (go == null)
+                {
+                    trashList1.Remove(go);
+                    pontos += 15;
+                    text.text = ($"Score: {pontos}");
+                }
             }
         }
 
@@ -126,13 +129,16 @@ public class TrashManager : MonoBehaviour
             }
         }
 
-        foreach (GameObject go in trashList3)
+        if (Scene != "4th Level")
         {
-            if (go == null)
+            foreach (GameObject go in trashList3)
             {
-                trashList3.Remove(go);
-                pontos += 15;
-                text.text = ($"Score: {pontos}");
+                if (go == null)
+                {
+                    trashList3.Remove(go);
+                    pontos += 15;
+                    text.text = ($"Score: {pontos}");
+                }
             }
         }
 
@@ -146,13 +152,16 @@ public class TrashManager : MonoBehaviour
             }
         }
 
-        foreach (GameObject go in trashList5)
+        if (Scene != "4th Level")
         {
-            if (go == null)
+            foreach (GameObject go in trashList5)
             {
-                trashList5.Remove(go);
-                pontos += 15;
-                text.text = ($"Score: {pontos}");
+                if (go == null)
+                {
+                    trashList5.Remove(go);
+                    pontos += 15;
+                    text.text = ($"Score: {pontos}");
+                }
             }
         }
 
@@ -189,24 +198,27 @@ public class TrashManager : MonoBehaviour
             }
         }
 
-        if (trashList1.Count == 0)
+        if (Scene != "4th Level")
         {
-            Vector3Int gridPosition = new Vector3Int(cLT.x, cLT.y, cLT.z);
-
-            map.SetTile(gridPosition, topLeft);
-
-            if (!points1added)
+            if (trashList1.Count == 0)
             {
-                pontos += 100;
-                text.text = ($"Score: {pontos}");
-                points1added = true;
-            }
-            else
-            {
+                Vector3Int gridPosition = new Vector3Int(cLT.x, cLT.y, cLT.z);
 
-            }
+                map.SetTile(gridPosition, topLeft);
 
-            trash1Done = true;
+                if (!points1added)
+                {
+                    pontos += 100;
+                    text.text = ($"Score: {pontos}");
+                    points1added = true;
+                }
+                else
+                {
+
+                }
+
+                trash1Done = true;
+            }
         }
 
         if (trashList2.Count == 0)
@@ -229,26 +241,28 @@ public class TrashManager : MonoBehaviour
             trash2Done = true;
         }
 
-        if (trashList3.Count == 0)
+        if (Scene != "4th Level")
         {
-            Vector3Int gridPosition = new Vector3Int(cMT.x, cMT.y, cMT.z);
-
-            map.SetTile(gridPosition, midTop);
-
-            if (!points3added)
+            if (trashList3.Count == 0)
             {
-                pontos += 100;
-                text.text = ($"Score: {pontos}");
-                points3added = true;
-            }
-            else
-            {
+                Vector3Int gridPosition = new Vector3Int(cMT.x, cMT.y, cMT.z);
 
-            }
+                map.SetTile(gridPosition, midTop);
 
-            trash3Done = true;
+                if (!points3added)
+                {
+                    pontos += 100;
+                    text.text = ($"Score: {pontos}");
+                    points3added = true;
+                }
+                else
+                {
+
+                }
+
+                trash3Done = true;
+            }
         }
-
         if (trashList4.Count == 0)
         {
             Vector3Int gridPosition = new Vector3Int(cMB.x, cMB.y, cMB.z);
@@ -269,25 +283,27 @@ public class TrashManager : MonoBehaviour
             trash4Done = true;
         }
 
-        if (trashList5.Count == 0)
+        if (Scene != "4th Level")
         {
-            Vector3Int gridPosition = new Vector3Int(cRT.x, cRT.y, cRT.z);
-
-            map.SetTile(gridPosition, rightTop);
-
-            if (!points5added)
+            if (trashList5.Count == 0)
             {
-                pontos += 100;
-                text.text = ($"Score: {pontos}");
-                points5added = true;
+                Vector3Int gridPosition = new Vector3Int(cRT.x, cRT.y, cRT.z);
+
+                map.SetTile(gridPosition, rightTop);
+
+                if (!points5added)
+                {
+                    pontos += 100;
+                    text.text = ($"Score: {pontos}");
+                    points5added = true;
+                }
+                else
+                {
+
+                }
+
+                trash5Done = true;
             }
-            else
-            {
-
-            }
-
-
-            trash5Done = true;
         }
 
         if (trashList6.Count == 0)
@@ -308,6 +324,31 @@ public class TrashManager : MonoBehaviour
             }
 
             trash6Done = true;
+        }
+
+        if (trashList1.Count == 0 && trashList2.Count == 0 &&
+            trashList3.Count == 0 && trashList4.Count == 0 &&
+            trashList5.Count == 0 && trashList6.Count == 0 &&
+            specialList.Count == 0)
+        {
+            int index = SceneManager.GetActiveScene().buildIndex;
+            switch (index)
+            {
+                case 1:
+                    break;
+                case 2:
+                    SceneManager.LoadScene("2nd Level");
+                    break;
+                case 3:
+                    SceneManager.LoadScene("3rd Level");
+                    break;
+                case 4:
+                    SceneManager.LoadScene("4th Level");
+                    break;
+                case 5:
+                    break;
+
+            }
         }
     }
 }

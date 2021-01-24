@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public Animator anim;
-
     public AudioManager audio;
     public Transform attackPoint;
     public float attackRange = 0.5f;

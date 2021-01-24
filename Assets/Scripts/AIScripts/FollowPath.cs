@@ -5,10 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Behaviour/FollowPath")]
 public class FollowPath : SeekAI
 {
-    float slowRadius = 1.5f;
-    float maxSpeed = 5f;
-    float timeToTarget = 5f;
-    float maxAccel = 2f;
     public Vector3[] waypoints;
 
     public Grid grid;

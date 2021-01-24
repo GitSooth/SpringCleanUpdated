@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    float distance;
     float timeBetweenAttacks = 0.5f, timer;
     public GameObject player;
+    public Animator anim;
+    float distance = 2f;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MovementAnimation();
         timer += Time.deltaTime;
         bool attack = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Program>().attack;
 
@@ -33,8 +35,10 @@ public class EnemyAttack : MonoBehaviour
         timer = 0;
         //Run animation
 
+        //if()
         if (player.GetComponentInChildren<PlayerAttack>().currentHealth > 0)
         {
+            anim.SetTrigger("Attack");
             player.GetComponentInChildren<PlayerAttack>().currentHealth -= 10;
             player.GetComponentInChildren<HealthBar>().slider.value -= 10;
         }
@@ -42,5 +46,16 @@ public class EnemyAttack : MonoBehaviour
         {
             Destroy(player);
         }
+    }
+
+    void MovementAnimation()
+    {
+        bool moving = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Program>().following;
+
+        if (moving == true)
+        {
+            anim.SetBool("Moving", true);
+        }
+        else anim.SetBool("Moving", false);
     }
 }

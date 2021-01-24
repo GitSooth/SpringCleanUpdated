@@ -49,5 +49,6 @@ public class Program : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(this.transform.position, detectionRadius);
+        Gizmos.DrawWireSphere(this.transform.position, attackRadius);
     }
 }

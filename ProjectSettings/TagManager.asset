@@ -15,6 +15,7 @@ TagManager:
   - Waves
   - Ondas
   - AStar
+  - EnemyChar
   layers:
   - Default
   - TransparentFX

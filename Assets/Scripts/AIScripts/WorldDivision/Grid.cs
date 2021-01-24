@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Grid : MonoBehaviour {
-    public Transform player, enemy;
+    public Transform player;
+        public GameObject[] enemies;
 	public LayerMask unwalkableMask;
 	public Vector2 gridWorldSize;
 	public float nodeRadius;
 	Node[,] grid;
+    int targetIndex = 0;
 
 	float nodeDiameter;
 	int gridSizeX, gridSizeY;
@@ -68,10 +70,15 @@ public class Grid : MonoBehaviour {
 	}
 
 	public List<Node> path;
-	void OnDrawGizmos() {
-		Gizmos.DrawWireCube(transform.position,new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
+    void OnDrawGizmos() {
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
         Node playerNode = NodeFromWorldPoint(player.position);
-        Node enemyNode = NodeFromWorldPoint(enemy.position);
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies[targetIndex] == null)
+        {
+            targetIndex++;
+        }
+        Node enemyNode = NodeFromWorldPoint(enemies[targetIndex].transform.position);
 		if (grid != null) {
 			foreach (Node n in grid) {
 				Gizmos.color = (n.walkable)?Color.white:Color.red;

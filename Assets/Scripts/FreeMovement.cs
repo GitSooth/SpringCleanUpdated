@@ -1,11 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FreeMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float maxSpeed = 5f;
+    public float impulseStrength = 1f;
+    public float pushStrength = 2f;
+
+    public float attackRange = 0.5f;
+    public float pushRange = 0.5f;
+    public LayerMask enemyLayers;
 
     public AudioManager audio;
     public Animator anim;
@@ -62,5 +66,50 @@ public class FreeMovement : MonoBehaviour
 
         else anim.SetBool("Moving", false);
         audio.Stop("feet");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Dash();
+        }
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            PushAway();
+        }
+    }
+
+    void Dash()
+    {
+        anim.SetTrigger("Dash");
+        Vector3 newPos = player.position;
+        if (Input.GetKey(KeyCode.W))
+            newPos.y += impulseStrength;
+        if (Input.GetKey(KeyCode.A))
+            newPos.x -= impulseStrength;
+        if (Input.GetKey(KeyCode.D))
+            newPos.x += impulseStrength;
+        if (Input.GetKey(KeyCode.S))
+            newPos.y -= impulseStrength;
+
+        player.position = newPos;
+    }
+
+    void PushAway()
+    {
+        Collider2D[] pushEnemies = Physics2D.OverlapCircleAll(player.position, pushRange, enemyLayers);
+
+        foreach(Collider2D enemy in pushEnemies)
+        {
+            Vector3 direction = player.position - enemy.transform.position;
+
+            direction.Normalize();
+
+            enemy.transform.position += direction * pushStrength;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(player.position, pushRange);
     }
 }
